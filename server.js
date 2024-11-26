@@ -10,7 +10,7 @@ app.get("/binance-p2p", async (req, res) => {
         const response = await axios.post("https://p2p.binance.com/bapi/c2c/v2/friendly/c2c/adv/search", {
             asset: "USDT",
             tradeType: "SELL",
-            fiat: "VES",
+            fiat: "BOB",
             page: 1,
             rows: 10
         });
