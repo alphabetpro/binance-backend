@@ -27,3 +27,24 @@ app.get("/binance-p2p", async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+const cors = require('cors');
+const express = require('express');
+const app = express();
+
+// Configura CORS para permitir tu dominio
+const corsOptions = {
+    origin: 'https://criptobol.com', // Cambia a tu dominio real
+    methods: 'GET', // Métodos permitidos
+};
+
+app.use(cors(corsOptions));
+
+// Resto de tu configuración
+app.get('/binance-p2p', (req, res) => {
+    // Tu lógica aquí
+    res.json({ highestPrice: "11.45" });
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Servidor corriendo en el puerto ${PORT}`));
